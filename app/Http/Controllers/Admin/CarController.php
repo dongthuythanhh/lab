@@ -15,6 +15,7 @@ class CarController extends Controller
     const PATH_UPLOAD = 'cars';
 
     public function index(){
+        
         $data = Car::query()->latest()->paginate(10);
 
         return view(self::PATH_VIEW .  __FUNCTION__, compact('data'));
